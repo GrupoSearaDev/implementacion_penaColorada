@@ -1,0 +1,11 @@
+{
+  "name": "node-script",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "mysql": "^2.18.1",
+    "papaparse": "^5.3.1"
+  }
+}
