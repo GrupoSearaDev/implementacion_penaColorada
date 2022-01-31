@@ -10,12 +10,11 @@ const connection = mysql.createPool({
 });
 let allFileNames, data, date;
 
+	date = '[' + (new Date()).toISOString() + ']: ';
+	data =  date + ' ';
+
 	connection.query('SELECT * from bloodpressure;', function (error, results, fields){
-		if(error) {
-			date = '[' + (new Date()).toISOString() + ']: ';
-			data =  date +  + JSON.stringify(error.msg);
-			fs.appendFileSync('error.txt', data);
-		};
+		if(error) fs.appendFileSync('error.txt', data);
 
 		allFileNames = new Set( results.map( I => I.fileName ) );
 		allFileNames = [...allFileNames];
@@ -25,8 +24,7 @@ let allFileNames, data, date;
 
 		connection.query(A, function (err, res, field){
 		if(err) {
-			date = '[' + (new Date()).toISOString() + ']: WHERE fileName=' + file + ', ';
-			data =  date +  + JSON.stringify(err.msg);
+			data += err + ' WHERE fileName=' + file + ', ';
 			fs.appendFileSync('error.txt', data);
 		};
 		//console.table(res);
@@ -42,11 +40,14 @@ let allFileNames, data, date;
 		};
 
 		const CSV = papa.unparse(res, config);
-		fs.writeFileSync('/home/pi/Documents/node-script/CSVs'+file, CSV);
+		fs.writeFileSync('/home/pi/Documents/node-script/CSVs/'+file, CSV);
 
 		if (allFileNames[allFileNames.length-1] === file){
-			connection.end( function (err1){
-		   		console.log({err1});
+			connection.end( function (er){
+				if(er) {
+					data += er +' ENDING CONN, ';
+					fs.appendFileSync('error.txt', data)
+				};
 			});
 			console.log('end');
 		};

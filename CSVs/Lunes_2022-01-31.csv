@@ -1,0 +1,5 @@
+createdAt,diastolic,systolic,pulse,error,fullName,fileName,rfid,employeeId
+2022-01-31T22:39:28.000Z,140,89,112,0,Anonimo X Y,Lunes_2022-01-31.csv,797990,61f810ad8b1aeb0004fdd8d8
+2022-01-31T23:17:55.000Z,140,89,112,0,Anonimo X Y,Lunes_2022-01-31.csv,789578,61f819be8b1aeb0004fdd8eb
+2022-01-31T23:18:17.000Z,120,89,92,0,Anonimo X Y,Lunes_2022-01-31.csv,45645,61f819d28b1aeb0004fdd8ed
+2022-01-31T23:19:36.000Z,120,89,92,0,Anonimo X Y,Lunes_2022-01-31.csv,89078,61f81a268b1aeb0004fdd8f0
