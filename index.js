@@ -1,4 +1,4 @@
-const mysql	 = require('mysql');
+const mysql	 = require('mysql2');
 const papa	 = require('papaparse');
 const fs	 = require('fs');
 const connection = mysql.createPool({
@@ -40,7 +40,16 @@ let allFileNames, data, date;
 		};
 
 		const CSV = papa.unparse(res, config);
-		fs.writeFileSync('/home/pi/Documents/node-script/CSVs/'+file, CSV);
+		const path = '/home/pi/Documents/node-script/CSVs/' + file;
+		fs.writeFileSync(path, CSV);
+
+		const aFewDaysFile = file.split('_')[1].split('.')[0];
+		const subs = (new Date()).getTime() - (new Date(date)).getTime();
+		const days = subs/ (1000 * 3600 * 24);
+			if(subs > 9){
+				fs.unlinkSync(path);
+			};
+
 
 		if (allFileNames[allFileNames.length-1] === file){
 			connection.end( function (er){
