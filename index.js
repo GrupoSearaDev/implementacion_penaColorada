@@ -4,7 +4,7 @@ const fs	 = require('fs');
 const connection = mysql.createPool({
 	connectionLimit	 : 10,
 	host	 : 'localhost',
-	user	 : 'my_user',
+	user	 : 'user2',
 	password : 'my_password',
 	database : 'bps' 
 });
@@ -15,6 +15,8 @@ let allFileNames, data, date;
 
 	connection.query('SELECT * from bloodpressure;', function (error, results, fields){
 		if(error) fs.appendFileSync('error.txt', data);
+
+		console.table({error, results,fields});
 
 		allFileNames = new Set( results.map( I => I.fileName ) );
 		allFileNames = [...allFileNames];
