@@ -1,6 +1,6 @@
 [
     {
-        "createdAt": "2022-03-28 22:28:15",
+        "createdAt": "2022-03-24 22:24:15",
         "diastolic": 200,
         "systolic": 180,
         "pulse": 172,
@@ -8,10 +8,10 @@
         "rfid": "bku",
         "employeeId": "",
         "error": 0,
-        "fileName": "Lunes_2022-03-28.csv"
+        "fileName": "Jueves_2022-03-24.csv"
     },
     {
-        "createdAt": "2022-03-28 22:28:37",
+        "createdAt": "2022-03-24 22:24:37",
         "diastolic": 200,
         "systolic": 180,
         "pulse": 172,
@@ -19,10 +19,10 @@
         "rfid": "g",
         "employeeId": "",
         "error": 0,
-        "fileName": "Lunes_2022-03-28.csv"
+        "fileName": "Jueves_2022-03-24.csv"
     },
     {
-        "createdAt": "2022-03-28 22:28:45",
+        "createdAt": "2022-03-24 22:24:45",
         "diastolic": 200,
         "systolic": 180,
         "pulse": 172,
@@ -30,6 +30,6 @@
         "rfid": "asdas",
         "employeeId": "",
         "error": 0,
-        "fileName": "Lunes_2022-03-28.csv"
+        "fileName": "Jueves_2022-03-24.csv"
     }
 ]
