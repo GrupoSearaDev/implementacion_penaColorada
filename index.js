@@ -37,7 +37,6 @@ const config = {
 Object.keys(allJSON).forEach( file => {
 	const CSV = papa.unparse(allJSON[file], config);
 	const path = __dirname + "/CSVs/" + file;
-	console.log({path});
 	fs.writeFileSync(path, CSV);
 });
 
